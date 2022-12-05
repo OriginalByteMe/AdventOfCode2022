@@ -33,7 +33,8 @@ def stack_mover():
   # get the top crates from each stack
   for i in range(9):
     top_crates.append(stack_dict[i+1][-1])
-    
+  
+  # print("Task 1", stack_dict)
   return top_crates
 
 def crateMover_9001():
@@ -61,19 +62,9 @@ def crateMover_9001():
       num_move = numbers[0]
       crate_origin_num = numbers[1]
       crate_target_num = numbers[2]
-      
-      # move the crate from the origin stack to the target stack
-      # crates = stack_dict[crate_origin_num][num_move:]
-      # print(crates)
-      # stack_dict[crate_target_num].append(crates)
-      # stack_dict[crate_origin_num] = stack_dict[crate_origin_num][:-num_move]
-      
       items_to_move = stack_dict[crate_origin_num][-num_move:]
       del stack_dict[crate_origin_num][-num_move:]
-      items_to_move.reverse()
       stack_dict[crate_target_num] += items_to_move
-      
-      
 
   top_crates = []
   # get the top crates from each stack
@@ -84,8 +75,9 @@ def crateMover_9001():
 
 def main():
   
-  print(stack_mover())
-  print(crateMover_9001())
+  print("Task 1",stack_mover())
+  print("Task 2",crateMover_9001())
+  crateMover_9001()
   pass
 
 
